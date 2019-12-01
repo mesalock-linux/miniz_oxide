@@ -1,6 +1,7 @@
 //! Extra streaming decompression functionality.
 //!
 //! As of now this is mainly inteded for use to build a higher-level wrapper.
+use std::prelude::v1::*;
 use std::io::Cursor;
 use std::{cmp, mem};
 

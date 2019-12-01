@@ -1,5 +1,6 @@
 //! This module contains functionality for decompression.
 
+use std::prelude::v1::*;
 use std::io::Cursor;
 use std::usize;
 
