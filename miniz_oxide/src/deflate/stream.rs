@@ -3,6 +3,7 @@
 //! As of now this is mainly inteded for use to build a higher-level wrapper.
 //!
 //! There is no DeflateState as the needed state is contained in the compressor struct itself.
+use std::prelude::v1::*;
 use std::convert::{AsMut, AsRef};
 
 use crate::deflate::core::{compress, CompressorOxide, TDEFLFlush, TDEFLStatus};

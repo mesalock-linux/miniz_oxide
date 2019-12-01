@@ -1,5 +1,7 @@
 //! This module contains functionality for compression.
 
+use std::prelude::v1::*;
+
 mod buffer;
 pub mod core;
 pub mod stream;

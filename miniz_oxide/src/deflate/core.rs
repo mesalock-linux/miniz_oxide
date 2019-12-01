@@ -1,5 +1,6 @@
 //! Streaming compression functionality.
 
+use std::prelude::v1::*;
 use std::convert::TryInto;
 use std::io::{self, Cursor, Seek, SeekFrom, Write};
 use std::{cmp, mem};
