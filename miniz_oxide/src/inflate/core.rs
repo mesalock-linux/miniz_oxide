@@ -1062,7 +1062,6 @@ fn decompress_inner(
 
     let mut out_buf = OutputBuffer::from_slice_and_pos(out_cur.get_mut(), out_buf_start_pos);
 
-
     // Make a local copy of the important variables here so we can work with them on the stack.
     let mut l = LocalVars {
         bit_buf: r.bit_buf,
@@ -1617,6 +1616,10 @@ fn decompress_inner(
         0
     };
 
+    if status == TINFLStatus::NeedsMoreInput && out_buf.bytes_left() == 0 {
+        status = TINFLStatus::HasMoreOutput
+    }
+
     r.state = state;
     r.bit_buf = l.bit_buf;
     r.num_bits = l.num_bits;
@@ -1649,7 +1652,6 @@ fn decompress_inner(
         }
     }
 
-    // NOTE: Status here and in miniz_tester doesn't seem to match.
     (
         status,
         in_buf.len() - in_iter.len() - in_undo,
